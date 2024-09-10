@@ -9,42 +9,29 @@ body {
     align-items: center;
     height: 100vh;
     background-image: url("images/pngegg\ \(9\).png");
-    background-size: cover;
-    background-position: center;
+    background-size: cover;   /* Ensure background scales properly */
+    background-position: center; /* Center the background image */
 }
 
 /* Container layout */
 .container {
     display: flex;
-    flex-direction: column;
-    width: 90%;
+    width: 80%;
     max-width: 1200px;
+    justify-content: space-between;
     padding: 20px;
+    flex-direction: row;
+    align-items: center;
 }
 
-.left-section, .right-section {
-    margin-bottom: 20px;
-}
-
+/* Left section styles */
 .left-section {
-    width: 100%;
+    width: 60%;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.right-section {
-    width: 100%;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: #3a8da2;
-    background-image: url(images/pngegg\ \(10\).png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 h1 {
@@ -59,18 +46,15 @@ h1 {
     color: #27ae60;
     margin-bottom: 30px;
 }
-
 #money-display {
     background-color: #666666b9;
-    width: max-content;
-    height: min-content;
+    padding: 10px;
     border-radius: 20px;
 }
 
 .title {
     background-color: #ffffffd0;
-    width: max-content;
-    height: min-content;
+    padding: 10px;
     border-radius: 20px;
 }
 
@@ -94,9 +78,27 @@ h1 {
     transform: scale(1.1); /* Capybara grows when clicked */
 }
 
+/* Right section styles */
+.right-section {
+    width: 30%;
+    background-color: #3a8da2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-image: url(images/pngegg\ \(10\).png);
+    background-size: cover;      /* Ensure the image covers the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+}
+
 .upgrade-item {
     margin-bottom: 20px;
     text-align: left;
+}
+
+h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
 }
 
 button {
@@ -109,13 +111,15 @@ button {
     cursor: pointer;
     border-radius: 8px;
     transition: background-color 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 button:hover {
     background-color: #666666;
 }
 
-/* Animations for floating money */
 .floating-money {
     position: absolute;
     font-size: 16px;
@@ -134,18 +138,31 @@ button:hover {
     }
 }
 
-/* Shop section */
+#toggle-shop-btn {
+    background-color: #007BFF;
+    color: white;
+}
+
+#toggle-shop-btn:hover {
+    background-color: #0056b3;
+}
+
 .shop-section {
     margin-top: 20px;
-    display: none;
-    overflow-x: auto;
-    white-space: nowrap;
+    display: none; /* Hide shop section initially */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks inside the shop section */
     padding: 10px;
 }
 
+.shop-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
 .skin-list {
-    display: inline-flex;
-    flex-wrap: nowrap;
+    display: inline-flex; /* Align items horizontally */
+    flex-wrap: nowrap; /* Prevent wrapping of items */
     gap: 20px;
 }
 
@@ -156,11 +173,11 @@ button:hover {
     background-color: #fff;
     text-align: center;
     width: 200px;
-    display: inline-block;
+    display: inline-block; /* Display items inline */
 }
 
 .skin-item img {
-    width: 50px;
+    width: 30%;
     height: auto;
     border-bottom: 1px solid #ddd;
     margin-bottom: 10px;
@@ -184,30 +201,107 @@ button:hover {
     margin-top: 20px;
 }
 
+.skin-selector h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#skin-dropdown {
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Styles for the select container */
 select {
-    width: 100%;
+    width: 200px;
     padding: 10px;
     border-radius: 8px;
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     font-size: 16px;
     color: #333;
+    appearance: none;
     cursor: pointer;
+    outline: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Responsive design */
-@media (min-width: 768px) {
+select:hover {
+    border-color: #888;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+select option {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    body {
+        height: auto;
+        padding: 0;
+    }
+
     .container {
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        padding: 10px;
     }
 
-    .left-section {
-        width: 60%;
+    .left-section, .right-section {
+        width: 100%;
     }
 
-    .right-section {
-        width: 30%;
+    .capybara-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #money-display h2 {
+        font-size: 20px;
+    }
+
+    .shop-section {
+        overflow-x: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .skin-item {
+        width: 100px;
+    }
+
+    .skin-item img {
+        width: 50px;
+    }
+
+    .skin-selector {
+        margin-top: 15px;
     }
 }

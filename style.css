@@ -9,26 +9,42 @@ body {
     align-items: center;
     height: 100vh;
     background-image: url("images/pngegg\ \(9\).png");
+    background-size: cover;
+    background-position: center;
 }
 
 /* Container layout */
 .container {
     display: flex;
-    width: 80%;
+    flex-direction: column;
+    width: 90%;
     max-width: 1200px;
-    justify-content: space-between;
     padding: 20px;
-    
 }
 
-/* Left section styles */
+.left-section, .right-section {
+    margin-bottom: 20px;
+}
+
 .left-section {
-    width: 60%;
+    width: 100%;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.right-section {
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #3a8da2;
+    background-image: url(images/pngegg\ \(10\).png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 h1 {
@@ -43,14 +59,15 @@ h1 {
     color: #27ae60;
     margin-bottom: 30px;
 }
-#money-display{
+
+#money-display {
     background-color: #666666b9;
     width: max-content;
     height: min-content;
     border-radius: 20px;
 }
 
-.title{
+.title {
     background-color: #ffffffd0;
     width: max-content;
     height: min-content;
@@ -77,27 +94,9 @@ h1 {
     transform: scale(1.1); /* Capybara grows when clicked */
 }
 
-/* Right section styles */
-.right-section {
-    width: 30%;
-    background-color: #3a8da2;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-image: url(images/pngegg\ \(10\).png);
-    background-size: cover;      /* Ensure the image covers the entire background */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat;
-}
-
 .upgrade-item {
     margin-bottom: 20px;
     text-align: left;
-}
-
-h3 {
-    margin: 0 0 10px 0;
-    font-size: 18px;
 }
 
 button {
@@ -110,9 +109,6 @@ button {
     cursor: pointer;
     border-radius: 8px;
     transition: background-color 0.2s ease-in-out;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
 }
 
 button:hover {
@@ -138,31 +134,18 @@ button:hover {
     }
 }
 
-#toggle-shop-btn {
-    background-color: #007BFF;
-    color: white;
-}
-
-#toggle-shop-btn:hover {
-    background-color: #0056b3;
-}
-
+/* Shop section */
 .shop-section {
     margin-top: 20px;
-    display: none; /* Hide shop section initially */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    white-space: nowrap; /* Prevent line breaks inside the shop section */
+    display: none;
+    overflow-x: auto;
+    white-space: nowrap;
     padding: 10px;
 }
 
-.shop-section h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
 .skin-list {
-    display: inline-flex; /* Align items horizontally */
-    flex-wrap: nowrap; /* Prevent wrapping of items */
+    display: inline-flex;
+    flex-wrap: nowrap;
     gap: 20px;
 }
 
@@ -173,11 +156,11 @@ button:hover {
     background-color: #fff;
     text-align: center;
     width: 200px;
-    display: inline-block; /* Display items inline */
+    display: inline-block;
 }
 
 .skin-item img {
-    width: 30%;
+    width: 50px;
     height: auto;
     border-bottom: 1px solid #ddd;
     margin-bottom: 10px;
@@ -201,56 +184,30 @@ button:hover {
     margin-top: 20px;
 }
 
-.skin-selector h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-#skin-dropdown {
-    padding: 10px;
-    font-size: 16px;
-}
-
-/* Stile per il contenitore del select */
 select {
-    width: 200px;
+    width: 100%;
     padding: 10px;
     border-radius: 8px;
-    background-color: #f0f0f0; /* Colore di sfondo */
-    border: 1px solid #ccc; /* Bordo grigio chiaro */
-    font-size: 16px; /* Dimensione del testo */
-    color: #333; /* Colore del testo */
-    appearance: none; /* Rimuove lo stile predefinito del browser */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    cursor: pointer; /* Mostra il puntatore quando si passa sopra */
-    outline: none; /* Rimuove il bordo attivo */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombra */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Animazione del bordo */
-}
-
-/* Hover: cambia il colore del bordo e aggiunge ombra */
-select:hover {
-    border-color: #888; /* Colore del bordo durante hover */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Aumenta l'ombra durante hover */
-}
-
-/* Focus: cambia il colore del bordo quando è attivo */
-select:focus {
-    border-color: #007bff; /* Cambia il bordo in blu */
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4); /* Aggiungi un'ombra blu */
-}
-
-/* Freccia personalizzata per il select */
-select::after {
-    content: '▼'; /* Freccia verso il basso */
-    font-size: 12px;
-    color: #555; /* Colore della freccia */
-    padding-left: 10px;
-}
-
-/* Cambia il colore dell'opzione selezionata */
-select option {
-    background-color: #fff;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    font-size: 16px;
     color: #333;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .left-section {
+        width: 60%;
+    }
+
+    .right-section {
+        width: 30%;
+    }
 }

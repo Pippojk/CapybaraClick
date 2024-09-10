@@ -1,0 +1,256 @@
+/* Basic page styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("images/pngegg\ \(9\).png");
+}
+
+/* Container layout */
+.container {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    justify-content: space-between;
+    padding: 20px;
+    
+}
+
+/* Left section styles */
+.left-section {
+    width: 60%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#money-display h2 {
+    font-size: 24px;
+    color: #27ae60;
+    margin-bottom: 30px;
+}
+#money-display{
+    background-color: #666666b9;
+    width: max-content;
+    height: min-content;
+    border-radius: 20px;
+}
+
+.title{
+    background-color: #ffffffd0;
+    width: max-content;
+    height: min-content;
+    border-radius: 20px;
+}
+
+.capybara-container {
+    margin: 20px auto;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#capybara {
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+}
+
+#capybara:active {
+    transform: scale(1.1); /* Capybara grows when clicked */
+}
+
+/* Right section styles */
+.right-section {
+    width: 30%;
+    background-color: #3a8da2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-image: url(images/pngegg\ \(10\).png);
+    background-size: cover;      /* Ensure the image covers the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+}
+
+.upgrade-item {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffffff;
+    border: none;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+button:hover {
+    background-color: #666666;
+}
+
+/* Animations for floating money */
+.floating-money {
+    position: absolute;
+    font-size: 16px;
+    color: #27ae60;
+    animation: money-float 1s ease-in-out forwards;
+}
+
+@keyframes money-float {
+    0% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+
+#toggle-shop-btn {
+    background-color: #007BFF;
+    color: white;
+}
+
+#toggle-shop-btn:hover {
+    background-color: #0056b3;
+}
+
+.shop-section {
+    margin-top: 20px;
+    display: none; /* Hide shop section initially */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks inside the shop section */
+    padding: 10px;
+}
+
+.shop-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.skin-list {
+    display: inline-flex; /* Align items horizontally */
+    flex-wrap: nowrap; /* Prevent wrapping of items */
+    gap: 20px;
+}
+
+.skin-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+    text-align: center;
+    width: 200px;
+    display: inline-block; /* Display items inline */
+}
+
+.skin-item img {
+    width: 30%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.buy-btn {
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.buy-btn:hover {
+    background-color: #45a049;
+}
+
+.skin-selector {
+    margin-top: 20px;
+}
+
+.skin-selector h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#skin-dropdown {
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Stile per il contenitore del select */
+select {
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f0f0f0; /* Colore di sfondo */
+    border: 1px solid #ccc; /* Bordo grigio chiaro */
+    font-size: 16px; /* Dimensione del testo */
+    color: #333; /* Colore del testo */
+    appearance: none; /* Rimuove lo stile predefinito del browser */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer; /* Mostra il puntatore quando si passa sopra */
+    outline: none; /* Rimuove il bordo attivo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombra */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Animazione del bordo */
+}
+
+/* Hover: cambia il colore del bordo e aggiunge ombra */
+select:hover {
+    border-color: #888; /* Colore del bordo durante hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Aumenta l'ombra durante hover */
+}
+
+/* Focus: cambia il colore del bordo quando è attivo */
+select:focus {
+    border-color: #007bff; /* Cambia il bordo in blu */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4); /* Aggiungi un'ombra blu */
+}
+
+/* Freccia personalizzata per il select */
+select::after {
+    content: '▼'; /* Freccia verso il basso */
+    font-size: 12px;
+    color: #555; /* Colore della freccia */
+    padding-left: 10px;
+}
+
+/* Cambia il colore dell'opzione selezionata */
+select option {
+    background-color: #fff;
+    color: #333;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capybara Clicker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Side: Capybara and Money -->
+        <div class="left-section">
+            <div class="title"><h1>Capybara Clicker</h1></div>
+            <div id="money-display">
+                <h2>Money: $<span id="money">0</span></h2>
+            </div>
+
+            <!-- Capybara Image Button -->
+            <div class="capybara-container">
+                <img id="capybara" src="images/pngegg (7).png" alt="Capybara">
+            </div>
+            <div  class="Money_per_second">
+                <h3><span id="Money_per_second">0</span>$ per second</h3>
+            </div>
+        </div>
+
+        <!-- Right Side: Upgrades -->
+        <div class="right-section">
+            <div class="upgrade-item">
+                <h3>Click Power: <span id="click-power">1</span></h3>
+                <button id="upgrade-btn"><h3>Click Power +1</h3><h3><span id="upgrade-cost">10</span>$</h3></button>
+            </div>
+            <div class="upgrade-item">
+                
+                <button id="autoclick-btn"><h3>auto click +1</h3><h3><span id="autoclick-cost">20</span>$</h3></button>
+            </div>
+            <button id="toggle-shop-btn">Toggle Shop</button> 
+            <div id="skin-selector" class="skin-selector">
+                <h2>Select Skin:</h2>
+                <select id="skin-dropdown">
+                    <option value="pngegg (7)">base</option>
+                    <!-- Options for skins will be populated by JavaScript -->
+                </select>
+            </div>
+             <!-- Shop for Skins -->
+             <div id="shop" class="shop-section">
+                <h2>Shop for Skins</h2>
+                <div class="skin-list">
+                    <!-- Example of skin item -->
+                    <div class="skin-item">
+                        <img src="images/pngegg (2).png" alt="Skin 1">
+                        <p>Skin 1</p>
+                        <p>$250</p>
+                        <button class="buy-btn" data-skin="pngegg (2)" data-price="250">Buy</button>
+                    </div>
+                    <div class="skin-item">
+                        <img src="images/pngegg (4).png" alt="Skin 2">
+                        <p>Skin 2</p>
+                        <p>$500</p>
+                        <button class="buy-btn" data-skin="pngegg (4)" data-price="500">Buy</button>
+                    </div>
+                    <div class="skin-item">
+                        <img src="images/pngegg (5).png" alt="Skin 2">
+                        <p>Skin 2</p>
+                        <p>$1000</p>
+                        <button class="buy-btn" data-skin="pngegg (5)" data-price="1000">Buy</button>
+                    </div>
+                    <div class="skin-item">
+                        <img src="images/pngegg (6).png" alt="Skin 2">
+                        <p>Skin 2</p>
+                        <p>$2000</p>
+                        <button class="buy-btn" data-skin="pngegg (6)" data-price="2000">Buy</button>
+                    </div>
+                    <!-- Add more skins here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

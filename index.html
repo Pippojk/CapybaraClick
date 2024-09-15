@@ -20,7 +20,7 @@
 
             <!-- Capybara Image Button -->
             <div class="capybara-container">
-                <img id="capybara" src="images/pngegg (7).png" alt="Capybara">
+                <img id="capybara" src="images/capybara.png" alt="Capybara">
             </div>
             <div  class="Money_per_second">
                 <h3><span id="Money_per_second">0</span>$ per second</h3>
@@ -29,19 +29,105 @@
 
         <!-- Right Side: Upgrades -->
         <div class="right-section">
-            <div class="upgrade-item">
-                <h3>Click Power: <span id="click-power">1</span></h3>
-                <button id="upgrade-btn"><h3>Click Power +1</h3><h3><span id="upgrade-cost">10</span>$</h3></button>
-            </div>
-            <div class="upgrade-item">
+            <h3>Click Power: <span id="click-power" data-price="10" data-value="1">1</span></h3>
+            <div class="upgrade-btns">
+                <div class="upgrade-item cl" data-price="50" data-value="1"> 
+                    <button id="upgrade-btn">
+                        <div class="text-container">
+                            <h3>Click Power +1</h3>
+                            <h3><span id="upgrade-cost">50</span>$</h3>
+                        </div>
+                        <img src="images/mano.png" alt="click" class="img-btn">
+                    </button>
+                </div>
                 
-                <button id="autoclick-btn"><h3>auto click +1</h3><h3><span id="autoclick-cost">20</span>$</h3></button>
+                <div class="upgrade-item au" data-price="125" data-value="1">
+                    <button id="autoclick-btn">
+                        <div class="text-container">
+                            <h3>auto click +1</h3>
+                            <h3><span id="autoclick-cost">125</span>$</h3>
+                        </div>
+                        <img src="images/click.png" alt="click" class="img-btn">
+                    </button>
+                </div>
+                <div class="upgrade-item cl" data-price="500" data-value="5"> 
+                    <button id="upgrade-btn" >
+                        <div class="text-container">
+                            <h3>Click Power +5</h3>
+                            <h3><span id="upgrade-cost">500</span>$</h3>
+                        </div>
+                        <img src="images/mani.png" alt="click" class="img-btn">
+                    </button>
+                </div>
+                <div class="upgrade-item au" data-price="1100" data-value="6">
+                    <button id="autoclick-btn">
+                        <div class="text-container">
+                            <h3>auto click +6</h3>
+                            <h3><span id="autoclick-cost">1100</span>$</h3>
+                        </div>
+                        <img src="images/clicks.png" alt="click" class="img-btn">
+                    </button>
+                </div>
+                <div class="upgrade-item cl" data-price="1200" data-value="100"> 
+                    <button id="upgrade-btn">
+                        <div class="text-container">
+                            <h3>Click Power +100</h3>
+                            <h3><span id="upgrade-cost">1200</span>$</h3>
+                        </div>
+                        <img src="images/manoElegante.png" alt="click" class="img-btn">
+                    </button>
+                </div>
+                <div class="upgrade-item au" data-price="100000" data-value="200">
+                    <button id="autoclick-btn">
+                        <div class="text-container">
+                            <h3>auto click +200</h3>
+                            <h3><span id="autoclick-cost">100K</span>$</h3>
+                        </div>
+                        <img src="images/farmer.png" alt="click" class="img-btn">
+                    </button>
+                </div>
+                <div class="upgrade-item cl" data-price="90000" data-value="1000"> 
+                    <button id="upgrade-btn">
+                        <div class="text-container">
+                            <h3>Click Power +1K</h3>
+                            <h3><span id="upgrade-cost">90K</span>$</h3>
+                        </div>
+                        <img src="images/manoRE.png" alt="click" class="img-btn">
+                    </button>
+                </div>
+                <div class="upgrade-item au" data-price="315000" data-value="5000">
+                    <button id="autoclick-btn">
+                        <div class="text-container">
+                            <h3>auto click +5K</h3>
+                            <h3><span id="autoclick-cost">315K</span>$</h3>
+                        </div>
+                        <img src="images/pump.png" alt="click" class="img-btn">
+                    </button>
+                </div>
+                <div class="upgrade-item cl" data-price="22000000" data-value="90000"> 
+                    <button id="upgrade-btn">
+                        <div class="text-container">
+                            <h3>Click Power +90K</h3>
+                            <h3><span id="upgrade-cost">22M</span>$</h3>
+                        </div>
+                        <img src="images/mgClick.png" alt="click" class="img-btn">
+                    </button>
+                </div>
+                <div class="upgrade-item au" data-price="81000000" data-value="100000">
+                    <button id="autoclick-btn">
+                        <div class="text-container">
+                            <h3>auto click +100K</h3>
+                            <h3><span id="autoclick-cost">81M</span>$</h3>
+                        </div>
+                        <img src="images/industry.png" alt="click" class="img-btn">
+                    </button>
+                </div>
             </div>
-            <button id="toggle-shop-btn">Toggle Shop</button> 
+            <button id="toggle-shop-btn">apri Shop</button> 
             <div id="skin-selector" class="skin-selector">
-                <h2>Select Skin:</h2>
+                <h2>scegli il tuo capybara:</h2>
                 <select id="skin-dropdown">
-                    <option value="pngegg (7)">base</option>
+                    <option value="capybara">classico</option>
                     <!-- Options for skins will be populated by JavaScript -->
                 </select>
             </div>
@@ -51,28 +137,94 @@
                 <div class="skin-list">
                     <!-- Example of skin item -->
                     <div class="skin-item">
-                        <img src="images/pngegg (2).png" alt="Skin 1">
-                        <p>Skin 1</p>
-                        <p>$250</p>
-                        <button class="buy-btn" data-skin="pngegg (2)" data-price="250">Buy</button>
+                        <img src="images/burlone.png" alt="Skin 1">
+                        <p>burlone</p>
+                        <p>$1M</p>
+                        <button class="buy-btn" data-skin="burlone" data-price="1000000">Buy</button>
                     </div>
                     <div class="skin-item">
-                        <img src="images/pngegg (4).png" alt="Skin 2">
-                        <p>Skin 2</p>
-                        <p>$500</p>
-                        <button class="buy-btn" data-skin="pngegg (4)" data-price="500">Buy</button>
+                        <img src="images/triste.png" alt="Skin 2">
+                        <p>triste</p>
+                        <p>$5M</p>
+                        <button class="buy-btn" data-skin="triste" data-price="5000000">Buy</button>
                     </div>
                     <div class="skin-item">
-                        <img src="images/pngegg (5).png" alt="Skin 2">
-                        <p>Skin 2</p>
-                        <p>$1000</p>
-                        <button class="buy-btn" data-skin="pngegg (5)" data-price="1000">Buy</button>
+                        <img src="images/colto.png" alt="Skin 3">
+                        <p>colto</p>
+                        <p>$25M</p>
+                        <button class="buy-btn" data-skin="colto" data-price="25000000">Buy</button>
                     </div>
                     <div class="skin-item">
-                        <img src="images/pngegg (6).png" alt="Skin 2">
-                        <p>Skin 2</p>
-                        <p>$2000</p>
-                        <button class="buy-btn" data-skin="pngegg (6)" data-price="2000">Buy</button>
+                        <img src="images/curioso.png" alt="Skin 3">
+                        <p>curioso</p>
+                        <p>$80M</p>
+                        <button class="buy-btn" data-skin="curioso" data-price="80000000">Buy</button>
+                    </div>
+                    <div class="skin-item">
+                        <img src="images/festoso.png" alt="Skin 4">
+                        <p>festoso</p>
+                        <p>$150M</p>
+                        <button class="buy-btn" data-skin="festoso" data-price="150000000">Buy</button>
+                    </div>
+                    <div class="skin-item">
+                        <img src="images/burlone.png" alt="Skin 2">
+                        <p>burlone</p>
+                        <p>$225M</p>
+                        <button class="buy-btn" data-skin="burlone" data-price="225000000">Buy</button>
+                    </div>
+                    <div class="skin-item">
+                        <img src="images/spaventato.png" alt="Skin 2">
+                        <p>spaventato</p>
+                        <p>$350M</p>
+                        <button class="buy-btn" data-skin="spaventato" data-price="350000000">Buy</button>
+                    </div>
+                    <div class="skin-item">
+                        <img src="images/rilassato.png" alt="Skin 2">
+                        <p>rilassato</p>
+                        <p>$480</p>
+                        <button class="buy-btn" data-skin="rilassato" data-price="480000000">Buy</button>
+                    </div>
+                    <div class="skin-item">
+                        <img src="images/malaticcio.png" alt="Skin 2">
+                        <p>malaticcio</p>
+                        <p>$600M</p>
+                        <button class="buy-btn" data-skin="malaticcio" data-price="600000000">Buy</button>
+                    </div>
+                    <div class="skin-item">
+                        <img src="images/ricco.png" alt="Skin 2">
+                        <p>ricco</p>
+                        <p>$750M</p>
+                        <button class="buy-btn" data-skin="ricco" data-price="750000000">Buy</button>
+                    </div>
+                    <div class="skin-item">
+                        <img src="images/ciccio.png" alt="Skin 2">
+                        <p>ciccio</p>
+                        <p>$900M</p>
+                        <button class="buy-btn" data-skin="ciccio" data-price="900000000">Buy</button>
+                    </div>
+                    <div class="skin-item">
+                        <img src="images/muscoloso.png" alt="Skin 2">
+                        <p>muscoloso</p>
+                        <p>$1200M</p>
+                        <button class="buy-btn" data-skin="muscoloso" data-price="1200000000">Buy</button>
+                    </div>
+                    <div class="skin-item">
+                        <img src="images/furioso.png" alt="Skin 2">
+                        <p>furioso</p>
+                        <p>$1500M</p>
+                        <button class="buy-btn" data-skin="furioso" data-price="1500000000">Buy</button>
+                    </div>
+                    <div class="skin-item">
+                        <img src="images/spaventoso.png" alt="Skin 2">
+                        <p>spaventoso</p>
+                        <p>$1800M</p>
+                        <button class="buy-btn" data-skin="spaventoso" data-price="1800000000">Buy</button>
+                    </div>
+                    <div class="skin-item">
+                        <img src="images/master.png" alt="Skin 2">
+                        <p>master</p>
+                        <p>$2500M</p>
+                        <button class="buy-btn" data-skin="master" data-price="2500000000">Buy</button>
                     </div>
                     <!-- Add more skins here -->
                 </div>

@@ -22,42 +22,50 @@ document.getElementById('capybara').addEventListener('click', () => {
     }, 1000);
 });
 
-document.getElementById('upgrade-btn').addEventListener('click', () => {
-    if (money >= upgradeCost) {
-        money -= upgradeCost;
-        clickPower++;
-        upgradeCost *= 2; // Increase cost after each upgrade
-        document.getElementById('money').innerText = money;
-        document.getElementById('click-power').innerText = clickPower;
-        document.getElementById('upgrade-cost').innerText = upgradeCost;
-        document.getElementById('Money_per_second').innerText = autoclickPower;
-    }
-});
+document.querySelectorAll(".cl").forEach(div =>{
+    div.addEventListener('click', () => {
+        let price = parseInt(div.getAttribute('data-price'), 10);
+        let value = parseInt(div.getAttribute('data-value'), 10);
+        if (money >= price) {
+            money -= price;
+            clickPower+=value;
+
+            document.getElementById('money').innerText = money;
+            document.getElementById('click-power').innerText = clickPower;
+        }
+    }); 
+})
+    
 
 let autoclickInterval = null;  // Variabile per memorizzare l'interval
 
-document.getElementById('autoclick-btn').addEventListener('click', () => {
-    if (money >= autoclickCost) {
-        money -= autoclickCost;
-        autoclickPower++;  // Incrementa l'autoclick power
-        autoclickCost += parseInt(autoclickCost/2); // Aumenta il costo del prossimo upgrade di autoclick
+document.querySelectorAll(".au").forEach(div => {
+    div.addEventListener('click', () => {
+        let price = parseInt(div.getAttribute('data-price'), 10);
+        let value = parseInt(div.getAttribute('data-value'), 10);
+        
+        if (money >= price){
+            money -= price;
+            autoclickPower += value; // Aumenta il costo del prossimo upgrade di autoclick
+            console.log(autoclickPower);
+            document.getElementById('money').innerText = money;
+            
+            document.getElementById('Money_per_second').innerText = autoclickPower;  // Aggiorna la visualizzazione del potere dell'autoclick
 
-        document.getElementById('money').innerText = money;
-        document.getElementById('autoclick-cost').innerText = autoclickCost;
-        document.getElementById('Money_per_second').innerText = autoclickPower;  // Aggiorna la visualizzazione del potere dell'autoclick
-
-        // Inizia o aggiorna l'intervallo per l'autoclick
-        if (!autoclickInterval) {  // Se l'intervallo non è già stato avviato
-            autoclickInterval = setInterval(() => {
-                money += autoclickPower;  // Aggiungi denaro in base all'autoclick power
-                document.getElementById('money').innerText = money;
-            }, 1000);  // Ogni secondo
+            // Inizia o aggiorna l'intervallo per l'autoclick
+            if (!autoclickInterval){  // Se l'intervallo non è già stato avviato
+                autoclickInterval = setInterval(() => {
+                    money += autoclickPower;  // Aggiungi denaro in base all'autoclick power
+                    document.getElementById('money').innerText = money;
+                }, 1000);  // Ogni secondo
+            }
         }
-    }
-});
+    });
+})
+    
 
-   // Handle click event for the "Buy" buttons in the shop
-   document.querySelectorAll('.buy-btn').forEach(button => {
+// Handle click event for the "Buy" buttons in the shop
+document.querySelectorAll('.buy-btn').forEach(button => {
     button.addEventListener('click', () => {
         const skin = button.getAttribute('data-skin');
         const price = parseInt(button.getAttribute('data-price'), 10);
@@ -87,14 +95,13 @@ document.getElementById('toggle-shop-btn').addEventListener('click', () => {
     const shop = document.getElementById('shop');
     if (shop.style.display === 'none' || shop.style.display === '') {
         shop.style.display = 'block'; // Show shop
-        document.getElementById('toggle-shop-btn').innerText = 'Close Shop'; // Change button text
-        document.getElementById('autoclick-btn').style.display = 'none';
-        document.getElementById('upgrade-btn').style.display = 'none';
+        document.getElementById('toggle-shop-btn').innerText = 'chiudi Shop'; // Change button text
+        document.querySelector(".upgrade-btns").style.display = 'none';
     } else {
-        document.getElementById('autoclick-btn').style.display = 'block';
-        document.getElementById('upgrade-btn').style.display = 'block';
+        document.querySelector(".upgrade-btns").style.display = 'block';
+
         shop.style.display = 'none'; // Hide shop
-        document.getElementById('toggle-shop-btn').innerText = 'Open Shop'; // Change button text
+        document.getElementById('toggle-shop-btn').innerText = 'apri Shop'; // Change button text
     }
 });
 

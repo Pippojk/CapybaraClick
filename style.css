@@ -22,6 +22,7 @@ body {
     padding: 20px;
     flex-direction: row;
     align-items: center;
+    margin-left: 10%;
 }
 
 /* Left section styles */
@@ -120,6 +121,18 @@ button:hover {
     background-color: #666666;
 }
 
+.upgrade-btns{
+    width: 90%;           /* Larghezza del contenitore */
+    height: 200px;          /* Altezza fissa per abilitare lo scroll */
+    border: 1px solid black;/* Bordo visibile per il contenitore */
+    padding: 10px;          /* Spazio interno */
+    overflow-y: scroll; 
+    background-color: #0056b3;
+    margin-bottom: 10px;
+    display: block;
+}
+
+
 .floating-money {
     position: absolute;
     font-size: 16px;
@@ -211,6 +224,22 @@ button:hover {
     font-size: 16px;
 }
 
+
+
+.text-container {
+    display: flex;
+    flex-direction: column;        /* Disporre le due righe di testo una sopra l'altra */
+    justify-content: center;       /* Centra verticalmente il testo rispetto all'immagine */
+    margin-right: 10px;            /* Spaziatura tra il testo e l'immagine */
+}
+
+.img-btn {
+    width: 20%;                   /* Imposta una dimensione adeguata per l'immagine */
+    height: auto;
+    margin-right: 30px;                /* Mantiene le proporzioni dell'immagine */
+}
+
+
 /* Styles for the select container */
 select {
     width: 200px;
@@ -242,6 +271,19 @@ select option {
     color: #333;
 }
 
+
+#upgrade-btn, #autoclick-btn{
+    display: flex;                /* Usa flex per il layout del bottone */
+    align-items: center;           /* Allinea verticalmente il testo e l'immagine */
+    justify-content: space-between;/* Spaziatura tra il testo e l'immagine */
+    width: 100%;                   /* Imposta la larghezza del bottone */
+    padding: 10px;                 /* Aggiungi padding per spaziatura */
+    border: none;                  /* Rimuovi il bordo del bottone */
+    background-color: #f4f4f4;     /* Imposta uno sfondo al bottone */
+    cursor: pointer;               /* Cambia il puntatore a mano per il bottone */
+    flex-direction: row;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     body {
@@ -256,10 +298,16 @@ select option {
         padding: 10px;
     }
 
-    .left-section, .right-section {
+    .left-section{
         width: 100%;
     }
-
+    .right-section{
+        width: 50%;
+        height: 70%;
+    }
+    upgrade-btns{
+        width: 50%;
+    }
     .capybara-container {
         width: 200px;
         height: 200px;
@@ -303,5 +351,8 @@ select option {
 
     .skin-selector {
         margin-top: 15px;
+    }
+    .upgrade-btns{
+        width: 80%;
     }
 }

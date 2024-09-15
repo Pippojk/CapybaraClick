@@ -40,7 +40,7 @@ document.getElementById('autoclick-btn').addEventListener('click', () => {
     if (money >= autoclickCost) {
         money -= autoclickCost;
         autoclickPower++;  // Incrementa l'autoclick power
-        autoclickCost *= 2; // Aumenta il costo del prossimo upgrade di autoclick
+        autoclickCost += parseInt(autoclickCost/2); // Aumenta il costo del prossimo upgrade di autoclick
 
         document.getElementById('money').innerText = money;
         document.getElementById('autoclick-cost').innerText = autoclickCost;

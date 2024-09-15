@@ -91,7 +91,9 @@ h1 {
     background-position: center; /* Center the image */
     background-repeat: no-repeat;
 }
-
+.right-section img{
+    with: 30%;
+}
 .upgrade-item {
     margin-bottom: 20px;
     text-align: left;
